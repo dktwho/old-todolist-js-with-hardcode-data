@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import PropTypes, { func } from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 
@@ -11,15 +11,13 @@ function useInputValue(defaultValue='') {
       onChange: event => setValue(event.target.value)
     },
     clear: () => setValue(''),
-    value: () =>  value,
+    value: () => value,
   }
 }
 
 
 function AddTodo({onCreate}) { 
-  
   const  input = useInputValue('')
-
 
   function submitHandler(event) {
     event.preventDefault()
